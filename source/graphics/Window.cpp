@@ -39,7 +39,7 @@ void Window::render()
 {
 	m_Window->clear();
 	
-	for (sf::Drawable* d : listToRender)
+	for (sf::Drawable* d : m_listToRender)
 	{
 		m_Window->draw(*d);
 	}
@@ -49,10 +49,10 @@ void Window::render()
 
 void Window::addDrawable(sf::Drawable* drawable)
 {
-	listToRender.push_back(drawable);
+	m_listToRender.push_back(drawable);
 }
 
 void Window::remDrawable(sf::Drawable* drawable)
 {
-	listToRender.erase(std::remove(listToRender.begin(), listToRender.end(), drawable), listToRender.end());
+	m_listToRender.erase(std::remove(m_listToRender.begin(), m_listToRender.end(), drawable), m_listToRender.end());
 }

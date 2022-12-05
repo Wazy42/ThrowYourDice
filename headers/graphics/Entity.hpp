@@ -65,8 +65,8 @@ public:
 	// TODO
 	
 protected:
-	sf::Sprite sprite;
-	sf::Texture texture;
+	sf::Sprite m_sprite;
+	sf::Texture m_texture;
 	void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
 
