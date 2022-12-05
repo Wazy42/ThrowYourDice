@@ -56,6 +56,6 @@ public:
 	
 private:
 	sf::RenderWindow* m_window;
-	std::vector<sf::Keyboard::Key> keyBindings;
+	std::vector<sf::Keyboard::Key> m_keyBindings;
 };
 

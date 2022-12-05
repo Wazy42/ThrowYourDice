@@ -103,6 +103,6 @@ public:
 	float getBackgroundMargin() const;
 
 protected:
-	sf::RectangleShape background; // Rectangle behind the text
+	sf::RectangleShape m_background; // Rectangle behind the text
 	void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
