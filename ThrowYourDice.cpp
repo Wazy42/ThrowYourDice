@@ -3,38 +3,32 @@
 #include "headers/graphics/Entity.hpp"
 #include "headers/graphics/BText.hpp"
 #include "headers/settings/Input.hpp"
+#include "headers/Room.hpp"
+#include "headers/Player.hpp"
 
 int main()
 {
 	// Create a window
 	Window* window = new Window("Throw Your Dice");
-	
-	// Test entity
-	sf::Texture cat;
-	cat.loadFromFile("assets/textures/cat.jpg");
-	Entity catTest(cat);
-	catTest.setPosition(100, 100);
-	catTest.setScale(0.5);
-	window->addDrawable(&catTest);
-
-	// Test text
-	sf::Font font;
-	font.loadFromFile("assets/fonts/spinwerad.ttf");
-	BText testText("Hello World!", font, 50, sf::Color::Red);
-	testText.setPosition(100, 700);
-	testText.setBackgroundMargin(10);
-	testText.setBackgroundColor(sf::Color::Blue);
-	window->addDrawable(&testText);
-
-	BText test2text("Copy of Hello world", &testText);
-	test2text.setPosition(100, 800);
-	window->addDrawable(&test2text);
 
 	// Input manager
 	Input input(window->getWindow());
 	input.setKeyToBinding(sf::Keyboard::Escape, input.escape);
 	input.setKeyToBinding(sf::Keyboard::Space, input.inventory);
+
+	// Room test 
+	Room room(20, 20, 32);
+	window->addDrawable(&room);
+
+	// player Test
+	sf::Texture cat;
+	cat.loadFromFile("assets/textures/cat.jpg");
+	Player player(cat);
+	player.setTileSize(32);
 	
+	window->addDrawable(&player);
+
+
 	while (window->isOpen())
 	{
 		sf::Event event;
@@ -48,15 +42,13 @@ int main()
 			{
 				switch (input.getKeyBinding(event.key.code))
 				{
-				case Input::Bindings::escape:
-					test2text.setString("Escape pressed");
-					break;
-				case Input::Bindings::inventory:
-					test2text.setString("Inventory pressed");
-					break;
 				default:
 					break;
 				}
+			}
+			else if (event.type == sf::Event::MouseButtonPressed)
+			{
+				player.setCoordinates(input.getMouseCoordinates().x / 32, input.getMouseCoordinates().y / 32);
 			}
 		}
 		window->render();

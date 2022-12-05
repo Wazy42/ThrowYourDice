@@ -51,3 +51,8 @@ Input::Bindings Input::getKeyBinding(sf::Keyboard::Key key)
 	}
 	return Bindings::DEBUG;
 }
+
+sf::Vector2i Input::getMouseCoordinates()
+{
+	return sf::Mouse::getPosition(*this->m_window);
+}
