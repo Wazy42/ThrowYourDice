@@ -1,29 +1,70 @@
 #pragma once
 
-#include "Entity.hpp"
-
 #include <SFML/Graphics.hpp>
 #include <vector>
 
 class Window
 {
 public:
-	// Constructor
-	Window(const char* t, int w = sf::VideoMode::getDesktopMode().width, int h = sf::VideoMode::getDesktopMode().height);
+	/// <summary>
+	/// Create a new window.
+	/// </summary>
+	/// <param name="title">Title of the window</param>
+	/// <param name="width">Width of the window (default: width of the screen)</param>
+	/// <param name="height">Height of the window (default: haight of the screen)</param>
+	/// <param name="style">sf::Style (default: Fullscreen)</param>
+	Window(const char* t, int w = sf::VideoMode::getDesktopMode().width, int h = sf::VideoMode::getDesktopMode().height, int s = sf::Style::Fullscreen);
 	~Window();
-	
-	// Game loop
-	bool isOpen() const;
-	bool pollEvent(sf::Event&);
-	void close();
-	void render();
 
-	// Entity management
-	void addRenderEntity(Entity*);
-	void remRenderEntity(Entity*);
+	/// <summary>
+	/// Return the window object.
+	/// </summary>
+	/// <returns></returns>
+	sf::RenderWindow* getWindow();
+	
+	/// <summary>
+	/// Return the size of the window.
+	/// </summary>
+	/// <returns>Width and height in a Vector2u</returns>
+	sf::Vector2u getSize();
+	
+	/// <summary>
+	/// Check if the window is open.
+	/// </summary>
+	/// <returns>boolean</returns>
+	bool isOpen() const;
+	
+	/// <summary>
+	/// Pop the event on top of the event queue, if any, and return it.
+	/// </summary>
+	/// <param name="event"></param>
+	/// <returns>boolean: value of event has been changed</returns>
+	bool pollEvent(sf::Event&);
+	
+	/// <summary>
+	/// Close the window.
+	/// </summary>
+	void close();
+	
+	/// <summary>
+	/// Render all elements that should be displayed on the window.
+	/// </summary>
+	void render();
+	
+	/// <summary>
+	/// Add a drawable object that should be displayed on the window.
+	/// </summary>
+	/// <param name="drawable">New drawable object</param>
+	void addDrawable(sf::Drawable*);
+	
+	/// <summary>
+	/// Remove a drawable object from the list of displayed drawable objects.
+	/// </summary>
+	/// <param name="drawable">Drawable object to remove</param>
+	void remDrawable(sf::Drawable*);
 	
 private:
 	sf::RenderWindow* m_Window;
-	std::vector<Entity*> listToRender;
+	std::vector<sf::Drawable*> listToRender;
 };
 

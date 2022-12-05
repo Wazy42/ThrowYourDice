@@ -1,26 +1,72 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Entity
+class Entity : public sf::Drawable
 {
 public:
-	Entity(const sf::Texture& texture);
+	/// <summary>
+	/// Create an entity, with a texture to render.
+	/// </summary>
+	/// <param name="texture">The texture that represent the Entity</param>
+	Entity(const sf::Texture&);
+	~Entity();
+	
+	// Position
 
-	// Sprite management
-	sf::Sprite& getSprite();
-	sf::Vector2f getSpritePosition();
-	void moveSprite(float x, float y);
-	void moveSprite(sf::Vector2f);
-	void setSpritePosition(float x, float y);
-	void setSpritePosition(sf::Vector2f);
+	/// <summary>
+	/// Get the position of the entity.
+	/// </summary>
+	/// <returns></returns>
+	sf::Vector2f getPosition();
 
-	// Texture managment
-	sf::Texture& getTexture();
-	void setTexture(const sf::Texture& texture);
-	void setTextureRect(sf::IntRect rect);
+	/// <summary>
+	/// Move the sprite by the given x and y pixels.
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	void move(float x, float y);
 
+	/// <summary>
+	/// Move the sprite by the given vector.
+	/// </summary>
+	/// <param name="movement"></param>
+	void move(sf::Vector2f);
+
+	/// <summary>
+	/// Set the sprite's position to the given x and y pixels.
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	void setPosition(float x, float y);
+	void setPosition(sf::Vector2f);
+
+	// Texture and scale
+
+	/// <summary>
+	/// Set the entity texture.
+	/// </summary>
+	/// <param name="texture">New texture</param>
+	void setTexture(const sf::Texture&);
+
+	/// <summary>
+	/// Sets the texture rect.
+	/// </summary>
+	/// <param name="rect">New texture rect</param>
+	void setTextureRect(sf::IntRect);
+
+	/// <summary>
+	/// Set the sprite's scale.
+	/// </summary>
+	/// <param name="x">New x scale</param>
+	/// <param name="y">New y scale</param>
+	void setScale(float, float = 0);
+
+	// Animation
+	// TODO
+	
 protected:
 	sf::Sprite sprite;
 	sf::Texture texture;
+	void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
 

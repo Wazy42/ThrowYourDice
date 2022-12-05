@@ -1,13 +1,23 @@
-#include "../../headers/graphics/Window.hpp"
+#include "headers/graphics/Window.hpp"
 
-Window::Window(const char* title, int width, int height)
+Window::Window(const char* title, int width, int height, int style)
 {
-	m_Window = new sf::RenderWindow(sf::VideoMode(width, height), title, sf::Style::Fullscreen);
+	m_Window = new sf::RenderWindow(sf::VideoMode(width, height), title, style);
 }
 
 Window::~Window()
 {
 	delete m_Window;
+}
+
+sf::RenderWindow* Window::getWindow()
+{
+	return m_Window;
+}
+
+sf::Vector2u Window::getSize()
+{
+	return m_Window->getSize();
 }
 
 bool Window::isOpen() const
@@ -22,33 +32,27 @@ bool Window::pollEvent(sf::Event& event)
 
 void Window::close()
 {
-	this->m_Window->close();
+	m_Window->close();
 }
 
 void Window::render()
 {
 	m_Window->clear();
 	
-	for (int i = 0; i < this->listToRender.size(); i++)
+	for (sf::Drawable* d : listToRender)
 	{
-		m_Window->draw(this->listToRender[i]->getSprite());
+		m_Window->draw(*d);
 	}
 	
 	m_Window->display();
 }
 
-void Window::addRenderEntity(Entity* entity)
+void Window::addDrawable(sf::Drawable* drawable)
 {
-	listToRender.push_back(entity);
+	listToRender.push_back(drawable);
 }
 
-void Window::remRenderEntity(Entity* entity)
+void Window::remDrawable(sf::Drawable* drawable)
 {
-	for (int i = 0; i < listToRender.size(); i++)
-	{
-		if (listToRender[i] == entity)
-		{
-			listToRender.erase(listToRender.begin() + i);
-		}
-	}
+	listToRender.erase(std::remove(listToRender.begin(), listToRender.end(), drawable), listToRender.end());
 }
