@@ -1,24 +1,28 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Entity
+class Entity : public sf::Drawable
 {
 public:
-	Entity(const sf::Texture& texture);
+	Entity(const sf::Texture&);
+	~Entity();
+	void draw(sf::RenderTarget&, sf::RenderStates) const;
+	
+	// Position
+	sf::Vector2f getPosition();
+	void move(float x, float y);
+	void move(sf::Vector2f);
+	void setPosition(float x, float y);
+	void setPosition(sf::Vector2f);
 
-	// Sprite management
-	sf::Sprite& getSprite();
-	sf::Vector2f getSpritePosition();
-	void moveSprite(float x, float y);
-	void moveSprite(sf::Vector2f);
-	void setSpritePosition(float x, float y);
-	void setSpritePosition(sf::Vector2f);
+	// Texture and scale
+	void setTexture(const sf::Texture&);
+	void setTextureRect(sf::IntRect);
+	void setScale(float, float = 0);
 
-	// Texture managment
-	sf::Texture& getTexture();
-	void setTexture(const sf::Texture& texture);
-	void setTextureRect(sf::IntRect rect);
-
+	// Animation
+	// TODO
+	
 protected:
 	sf::Sprite sprite;
 	sf::Texture texture;

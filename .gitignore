@@ -33,8 +33,6 @@
 
 # Visual Studio directories
 .vs/
+.vscode/
 x64/
-*.sln
-*.vcxproj
-*.vcxproj.filters
 *.vcxproj.user
