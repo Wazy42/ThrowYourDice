@@ -4,13 +4,22 @@
 #include <string>
 #include <array>
 
+/// <summary>
+/// Class that manages the inputs of a window (keyboard and mouse).
+/// </summary>
 class Input
 {
 public:
+	/// <summary>
+	/// Create a new Input object thaht will catches events from the given window.
+	/// </summary>
+	/// <param name="window">The window linked.</param>
 	Input(sf::RenderWindow* w);
 	~Input();
 	
-	// Possibles bindings
+	/// <summary>
+	/// All actions that can be done with the keyboard.
+	/// </summary>
 	enum Bindings {
 		// Menu
 		escape,
@@ -31,7 +40,18 @@ public:
 		DEBUG, // must be the last one, used to know the size of the array (not a real binding) 
 	};
 
+	/// <summary>
+	/// Add or change a key binding.
+	/// </summary>
+	/// <param name="name">The binding's name</param>
+	/// <param name="key">The key</param>
+	/// <param name="swap">If the key is already used, swap with the replaced key ?</param>
 	bool setKeyToBinding(sf::Keyboard::Key k, Bindings b, bool s = true);
+	/// <summary>
+	/// Get the binding of a key.
+	/// </summary>
+	/// <param name="key">The key</param>
+	/// <returns>The binding</returns>
 	Bindings getKeyBinding(sf::Keyboard::Key k);
 	
 private:
