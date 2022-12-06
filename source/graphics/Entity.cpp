@@ -35,6 +35,21 @@ void Entity::setPosition(sf::Vector2f position)
 	this->m_sprite.setPosition(position);
 }
 
+sf::Vector2f Entity::getCoordinates()
+{
+	return this->m_coordinates;
+}
+
+void Entity::setCoordinates(sf::Vector2f coordinates)
+{
+	this->m_coordinates = coordinates;
+}
+
+void Entity::setCoordinates(float x, float y)
+{
+	this->m_coordinates = sf::Vector2f(x, y);
+}
+
 void Entity::setTexture(const sf::Texture& texture)
 {
 	this->m_texture = texture;
@@ -56,6 +71,14 @@ void Entity::setScale(float x, float y)
 	{
 		this->m_sprite.setScale(x, y);
 	}
+}
+
+void Entity::calculateOrigin()
+{
+	m_sprite.setOrigin(
+		(m_sprite.getGlobalBounds().width - SIZE_TILE) / 2,
+		m_sprite.getGlobalBounds().height - SIZE_TILE
+	);
 }
 
 // TODO: Animation
