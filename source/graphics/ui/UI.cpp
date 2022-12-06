@@ -31,7 +31,7 @@ void UI::handleEvent(const sf::Event& e)
 	case sf::Event::MouseButtonPressed:
 		{
 			WidgetButton* btn = this->getHoveredButton();
-			if (btn) {
+			if (btn && btn->m_callback) {
 				(btn->m_callback)(btn->m_callbackParam);
 			}
 		}
@@ -45,7 +45,7 @@ WidgetButton* UI::getHoveredButton() const
 
 	for (WidgetButton* btn : m_buttons) {
 		const sf::Vector2f& b = btn->getPosition();
-		sf::Vector2f e = b + btn->getScale();
+		sf::Vector2f e = b + btn->getSize();
 
 		if (mousePos.x >= b.x && mousePos.x <= e.x && mousePos.y >= b.y && mousePos.y <= e.y) {
 			return btn;
