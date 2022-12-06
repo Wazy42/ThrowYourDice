@@ -65,6 +65,6 @@ public:
 	
 private:
 	sf::RenderWindow* m_Window;
-	std::vector<sf::Drawable*> listToRender;
+	std::vector<sf::Drawable*> m_listToRender;
 };
 

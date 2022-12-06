@@ -4,6 +4,8 @@
 #include "headers/graphics/AnimatedEntity.hpp"
 #include "headers/graphics/BText.hpp"
 #include "headers/settings/Input.hpp"
+#include "headers/Room.hpp"
+#include "headers/Player.hpp"
 
 int main()
 {
@@ -90,7 +92,12 @@ int main()
                     break;
                 default:
                     break;
+                    
                 }
+             else if (event.type == sf::Event::MouseButtonPressed)
+			       {
+				       player.setCoordinates(input.getMouseCoordinates().x / 32, input.getMouseCoordinates().y / 32);
+			         }
             }
         }
         window->render();
@@ -98,4 +105,5 @@ int main()
 
     delete window;
     return 0;
+
 }

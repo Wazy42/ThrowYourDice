@@ -3,7 +3,7 @@
 BText::BText(sf::String string, sf::Font& font, int size, sf::Color color)
 	: sf::Text(string, font, size)
 {
-	this->background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
+	this->m_background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
 	sf::Text::setFillColor(color);
 }
 
@@ -24,76 +24,76 @@ void BText::copySettings(BText* model)
 	sf::Text::setFillColor(model->getFillColor());
 	sf::Text::setOutlineColor(model->getOutlineColor());
 	sf::Text::setOutlineThickness(model->getOutlineThickness());
-	this->background.setFillColor(model->background.getFillColor());
-	this->background.setOutlineColor(model->background.getFillColor());
-	this->background.setOutlineThickness(model->background.getOutlineThickness());
+	this->m_background.setFillColor(model->m_background.getFillColor());
+	this->m_background.setOutlineColor(model->m_background.getFillColor());
+	this->m_background.setOutlineThickness(model->m_background.getOutlineThickness());
 }
 
 void BText::setString(sf::String string)
 {
 	sf::Text::setString(string);
-	this->background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
+	this->m_background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
 }
 
 void BText::setFont(sf::Font& font)
 {
 	sf::Text::setFont(font);
-	this->background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
+	this->m_background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
 }
 
 void BText::setCharacterSize(int size)
 {
 	sf::Text::setCharacterSize(size);
-	this->background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
+	this->m_background.setSize(sf::Vector2f(sf::Text::getLocalBounds().width, sf::Text::getLocalBounds().height));
 }
 
 void BText::move(float x, float y)
 {
 	sf::Text::move(x, y);
-	this->background.move(x, y);
+	this->m_background.move(x, y);
 }
 
 void BText::move(const sf::Vector2f& movement)
 {
 	sf::Text::setPosition(movement);
-	this->background.move(movement);
+	this->m_background.move(movement);
 }
 
 void BText::setPosition(float x, float y)
 {
 	sf::Text::setPosition(x, y);
-	this->background.setPosition(x, y);
+	this->m_background.setPosition(x, y);
 }
 
 void BText::setPosition(const sf::Vector2f& position)
 {
 	sf::Text::setPosition(position);
-	this->background.setPosition(position);
+	this->m_background.setPosition(position);
 }
 
 void BText::setBackgroundColor(const sf::Color& color)
 {
-	this->background.setFillColor(color);
-	this->background.setOutlineColor(color);
+	this->m_background.setFillColor(color);
+	this->m_background.setOutlineColor(color);
 }
 
 sf::Color BText::getBackgroundColor() const
 {
-	return this->background.getFillColor();
+	return this->m_background.getFillColor();
 }
 
 void BText::setBackgroundMargin(float margin)
 {
-	this->background.setOutlineThickness(margin);
+	this->m_background.setOutlineThickness(margin);
 }
 
 float BText::getBackgroundMargin() const
 {
-	return this->background.getOutlineThickness();
+	return this->m_background.getOutlineThickness();
 }
 
 void BText::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	target.draw(this->background, states);
+	target.draw(this->m_background, states);
 	target.draw((sf::Text)*this, states);
 }
