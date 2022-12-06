@@ -1,4 +1,4 @@
-#include "headers/graphics/BText.hpp"
+#include "../../headers/graphics/BText.hpp"
 
 BText::BText(sf::String string, sf::Font& font, int size, sf::Color color)
 	: sf::Text(string, font, size)

@@ -1,4 +1,4 @@
-#include "headers/graphics/Window.hpp"
+#include "../../headers/graphics/Window.hpp"
 
 Window::Window(const char* title, int width, int height, int style)
 {

@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#define SPRITE_SIZE 32;
+
 class Entity : public sf::Drawable
 {
 public:
@@ -61,12 +63,21 @@ public:
 	/// <param name="y">New y scale</param>
 	void setScale(float, float = 0);
 
+    // Sprite
+    /// <summary>
+    /// Get the sprite of the entity.
+    /// </summary>
+    /// <returns></returns>
+    const sf::Sprite& getSprite(void) const;
+
+
 	// Animation
-	// TODO
+
 	
+    
 protected:
-	sf::Sprite sprite;
-	sf::Texture texture;
+	sf::Sprite m_sprite;
+	sf::Texture m_texture;
 	void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
 
