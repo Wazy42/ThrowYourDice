@@ -139,6 +139,7 @@
     <ClCompile Include="ThrowYourDice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Const.hpp" />
     <ClInclude Include="headers\graphics\Entity.hpp" />
     <ClInclude Include="headers\graphics\BText.hpp" />
     <ClInclude Include="headers\graphics\Window.hpp" />
