@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\graphics\AnimatedEntity.cpp" />
     <ClCompile Include="source\graphics\Entity.cpp" />
     <ClCompile Include="source\graphics\BText.cpp" />
     <ClCompile Include="source\graphics\ui\UI.cpp" />
@@ -142,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.hpp" />
+    <ClInclude Include="headers\graphics\AnimatedEntity.hpp" />
     <ClInclude Include="headers\graphics\Entity.hpp" />
     <ClInclude Include="headers\graphics\BText.hpp" />
     <ClInclude Include="headers\graphics\ui\UI.h" />

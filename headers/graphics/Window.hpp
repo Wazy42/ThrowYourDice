@@ -54,6 +54,7 @@ public:
 	
 	/// <summary>
 	/// Add a drawable object that should be displayed on the window.
+	/// Note that layers 3, 5 and 7 are reserved for animations.
 	/// </summary>
 	/// <param name="drawable">New drawable object</param>
 	/// <param name="layer">Layer of the object (0 = background, 9 = foreground)</param>

@@ -1,46 +1,69 @@
 #include "../../headers/graphics/AnimatedEntity.hpp"
 
-AnimatedEntity::AnimatedEntity(const sf::Texture &texture, std::vector<sf::IntRect> animationIndex) 
+AnimatedEntity::AnimatedEntity(const sf::Texture &texture, sf::Vector2f frameSize, int framesPerAnimation, int delayBetweenFrames) 
 : Entity(texture)
 {
-    this->m_count = 0;
-    this->m_animationIndex = animationIndex;
-
-    if (animationIndex.size() <= 0)
-        throw;
-
-    this->setTextureRect(this->m_animationIndex[this->m_count]);
+	this->m_frameSize = frameSize;
+	this->m_framesPerAnimation = framesPerAnimation;
+	this->m_currentFrame = 0;
+	this->m_currentAnimation = 0;
+	this->m_delayBetweenFrames = delayBetweenFrames;
+	this->m_delayBeforeNextFrame = delayBetweenFrames;
+	this->setTextureRect(sf::IntRect(0, 0, (int)frameSize.x, (int)frameSize.y));
 }
 
-AnimatedEntity::~AnimatedEntity() {}
-
-void AnimatedEntity::nextAnimation(void)
+AnimatedEntity::~AnimatedEntity()
 {
-    this->m_count++;
-    if (this->m_count >= this->m_animationIndex.size())
-        this->m_count = 0;
-    this->setTextureRect(this->m_animationIndex[this->m_count]);
 }
 
-void AnimatedEntity::Animate(std::string fileName, int posT)
+int AnimatedEntity::getCurrentFrame()
 {
-    if (!this->m_texture.loadFromFile(fileName))
-    {
-        throw "ANIMATED_ENTITY::ANIMATE::ERROR::LOADING_TEXTURE";
-    }
-    this->setTexture(this->m_texture);
-    // this->setTextureRect(this->m_animationIndex[posT]);
+	return this->m_currentFrame;
+}
 
+void AnimatedEntity::setCurrentFrame(int frame)
+{
+	this->m_currentFrame = frame;
+	this->setTextureRect(sf::IntRect(
+		this->m_currentFrame * (int)this->m_frameSize.x,
+		this->m_currentAnimation * (int)this->m_frameSize.y,
+		(int)this->m_frameSize.x,
+		(int)this->m_frameSize.y
+	));
+}
 
-    
-        if (this->m_count % 30 == 0)
-        {
-            this->m_iter = (this->m_iter + 16) % (16*5);
-            // 16 = Size
-            // 64 = Size * 5 (5 animations)
-            this->setTextureRect(sf::IntRect(this->m_iter, posT, 16, 16)); 
-            this->m_count = 0;
-        }
-        this->m_count++;
-    
+void AnimatedEntity::nextFrame()
+{
+	if (this->m_currentFrame >= this->m_framesPerAnimation - 1)
+		this->setCurrentFrame(0);
+	else
+		this->setCurrentFrame(this->m_currentFrame + 1);
+
+}
+
+int AnimatedEntity::getCurrentAnimation()
+{
+	return this->m_currentAnimation;
+}
+
+void AnimatedEntity::setCurrentAnimation(int animation)
+{
+	this->m_currentAnimation = animation;
+	this->setCurrentFrame(this->m_currentFrame);
+}
+
+void AnimatedEntity::update()
+{
+	this->m_delayBeforeNextFrame--;
+	if (this->m_delayBeforeNextFrame <= 0)
+	{
+		this->m_delayBeforeNextFrame = this->m_delayBetweenFrames;
+		this->nextFrame();
+	}
+}
+
+void AnimatedEntity::setDelayBetweenFrames(int delay)
+{
+	this->m_delayBetweenFrames = delay;
+	this->m_delayBeforeNextFrame = std::max(this->m_delayBeforeNextFrame, delay);
 }
