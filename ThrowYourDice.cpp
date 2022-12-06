@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Const.hpp"
 #include "headers/graphics/Window.hpp"
 #include "headers/graphics/Entity.hpp"
 #include "headers/graphics/AnimatedEntity.hpp"
@@ -14,14 +15,8 @@ int main()
 
     // Test entity
     sf::Texture bunny;
-    // cat.loadFromFile("assets/textures/cat.jpg");
-    // Entity bunnyAnim(bunny);
-    AnimatedEntity bunnyAnim(bunny, std::vector<sf::IntRect>({sf::IntRect(0, 0, 16, 16)} ) );
-    // bunnyAnim.Animate("assets/textures/bunny_animations.png", 0);
-    bunnyAnim.setScale(4, 4);
-    // catTest.setPosition(100, 100);
-    // catTest.setScale(0.5);
-    window->addDrawable(&bunnyAnim);
+    AnimatedEntity player(bunny, std::vector<sf::IntRect>({sf::IntRect(0, 0, 16, 16)}));
+    window->addDrawable(&player);
 
     // Test text
     sf::Font font;
@@ -60,44 +55,43 @@ int main()
                 {
                 case Input::Bindings::up:
                     std::cout << "up" << std::endl;
-                    bunnyAnim.move(0, -1);
-                    bunnyAnim.Animate("assets/textures/slime_pink.png", 16);
-                    //orientation
+                    player.move(0, -1);
+                    player.ChangeAnimation(ANIMATION_UP);
+                    // orientation
                     break;
                 case Input::Bindings::down:
                     std::cout << "down" << std::endl;
-                    bunnyAnim.move(0, 1);
-                    bunnyAnim.Animate("assets/textures/slime_pink.png", 0);
-                    //orientation
+                    player.move(0, 1);
+                    player.ChangeAnimation(ANIMATION_DOWN);
+                    // orientation
                     break;
                 case Input::Bindings::left:
                     std::cout << "left" << std::endl;
-                    bunnyAnim.move(-1, 0);
-                    bunnyAnim.Animate("assets/textures/slime_pink.png", 48);
-                    //orientation
+                    player.move(-1, 0);
+                    player.ChangeAnimation(ANIMATION_LEFT);
+                    // orientation
                     break;
                 case Input::Bindings::right:
                     std::cout << "right" << std::endl;
-                    bunnyAnim.move(1, 0);
-                    bunnyAnim.Animate("assets/textures/slime_pink.png", 32);
-                    //orientation
+                    player.move(1, 0);
+                    player.ChangeAnimation(ANIMATION_RIGHT);
+                    // orientation
                     break;
 
                 case Input::Bindings::escape:
-                    test2text.setString("Escape key pressed");
+                    // test2text.setString("Escape key pressed");
                     window->close();
                     break;
                 case Input::Bindings::inventory:
-                    test2text.setString("Inventory pressed");
+                    // test2text.setString("Inventory pressed");
                     break;
                 default:
                     break;
-                    
                 }
-             else if (event.type == sf::Event::MouseButtonPressed)
-			       {
-				       player.setCoordinates(input.getMouseCoordinates().x / 32, input.getMouseCoordinates().y / 32);
-			         }
+            }
+            else if(event.type == sf::Event::MouseButtonPressed)
+            {
+                // player.setCoordinates(input.getMouseCoordinates().x / 32, input.getMouseCoordinates().y / 32);
             }
         }
         window->render();
@@ -105,5 +99,4 @@ int main()
 
     delete window;
     return 0;
-
 }

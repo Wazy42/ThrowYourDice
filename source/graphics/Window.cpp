@@ -1,8 +1,10 @@
+#include "../../Const.hpp"
 #include "../../headers/graphics/Window.hpp"
 
 Window::Window(const char* title, int width, int height, int style)
 {
 	m_Window = new sf::RenderWindow(sf::VideoMode(width, height), title, style);
+    m_Window->setFramerateLimit(FPS);
 }
 
 Window::~Window()

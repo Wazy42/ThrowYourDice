@@ -1,5 +1,5 @@
 #pragma once
-#include "headers/graphics/Entity.hpp"
+#include "graphics/Entity.hpp"
 
 class Player : public Entity
 {

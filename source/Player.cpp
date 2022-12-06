@@ -1,4 +1,4 @@
-#include "headers/Player.hpp"
+#include "../headers/Player.hpp"
 
 Player::Player(sf::Texture& texture) 
 	: Entity(texture)

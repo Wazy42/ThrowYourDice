@@ -3,6 +3,9 @@
 // Assets path
 #define ASSETS_PATH "assets/"
 
+// FPS
+#define FPS 60
+
 // Fonts path
 #define FONT_PATH ASSETS_PATH ## "fonts/"
 #define FONT_SPINWERARD FONT_PATH ## "spinwerad.ttf"
@@ -17,3 +20,9 @@
 
 // Sizes
 #define SIZE_TILE 32
+
+// Animation
+#define ANIMATION_DOWN 0
+#define ANIMATION_UP 1
+#define ANIMATION_RIGHT 2
+#define ANIMATION_LEFT 3
