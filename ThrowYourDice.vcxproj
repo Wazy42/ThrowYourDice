@@ -137,7 +137,6 @@
     <ClCompile Include="source\graphics\ui\WidgetButton.cpp" />
     <ClCompile Include="source\graphics\Window.cpp" />
     <ClCompile Include="source\Room.cpp" />
-    <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\settings\Input.cpp" />
     <ClCompile Include="ThrowYourDice.cpp" />
   </ItemGroup>
@@ -149,7 +148,6 @@
     <ClInclude Include="headers\graphics\ui\WidgetButton.h" />
     <ClInclude Include="headers\graphics\Window.hpp" />
     <ClInclude Include="headers\Room.hpp" />
-    <ClInclude Include="headers\Player.hpp" />
     <ClInclude Include="headers\settings\Input.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

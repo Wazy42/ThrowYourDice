@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Const.hpp"
 #include <vector>
 
 class Window
@@ -55,7 +56,8 @@ public:
 	/// Add a drawable object that should be displayed on the window.
 	/// </summary>
 	/// <param name="drawable">New drawable object</param>
-	void addDrawable(sf::Drawable*);
+	/// <param name="layer">Layer of the object (0 = background, 9 = foreground)</param>
+	void addDrawable(sf::Drawable*, int layer);
 	
 	/// <summary>
 	/// Remove a drawable object from the list of displayed drawable objects.
@@ -65,6 +67,6 @@ public:
 	
 private:
 	sf::RenderWindow* m_Window;
-	std::vector<sf::Drawable*> m_listToRender;
+	std::map<sf::Drawable*, int> m_listToRender;
 };
 

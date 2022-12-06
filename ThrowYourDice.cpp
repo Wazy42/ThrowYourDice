@@ -4,7 +4,6 @@
 #include "headers/graphics/BText.hpp"
 #include "headers/settings/Input.hpp"
 #include "headers/Room.hpp"
-#include "headers/Player.hpp"
 
 int main()
 {
@@ -15,19 +14,7 @@ int main()
 	Input input(window->getWindow());
 	input.setKeyToBinding(sf::Keyboard::Escape, input.escape);
 	input.setKeyToBinding(sf::Keyboard::Space, input.inventory);
-
-	// Room test 
-	Room room(20, 20, 32);
-	window->addDrawable(&room);
-
-	// player Test
-	sf::Texture cat;
-	cat.loadFromFile("assets/textures/cat.jpg");
-	Player player(cat);
-	player.setTileSize(32);
 	
-	window->addDrawable(&player);
-
 
 	while (window->isOpen())
 	{
@@ -48,7 +35,7 @@ int main()
 			}
 			else if (event.type == sf::Event::MouseButtonPressed)
 			{
-				player.setCoordinates(input.getMouseCoordinates().x / 32, input.getMouseCoordinates().y / 32);
+				// TODO: Add mouse input
 			}
 		}
 		window->render();

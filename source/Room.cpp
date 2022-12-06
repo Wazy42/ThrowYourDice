@@ -1,29 +1,29 @@
 #include "headers/Room.hpp"
 
-Room::Room(int w, int h, int tile_size) {
-	this->m_width = w;
-	this->m_height = h;
-	this->m_tile_size = tile_size;
+Room::Room(int width, int height)
+{
+	this->regenerate(width, height);
 }
 
 Room::~Room()
 {
 }
 
-void Room::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void Room::regenerate(int width, int height)
 {
-	for (int y = 0; y < m_height; y++)
+	// You want to generate the obstacles first, into the obstacle layer
+	m_map.clear();
+	m_map.resize(1);
+	for (auto layer : m_map)
 	{
-		for (int x = 0; x < m_width; x++) {
-			sf::RectangleShape tile;
-			tile.setPosition((float)x * m_tile_size, (float)y * m_tile_size);
-			tile.setSize(sf::Vector2f((float)m_tile_size, (float)m_tile_size));
-			if ((x + y) % 2 == 0)
-				tile.setFillColor(sf::Color::Black);
-			else
-				tile.setFillColor(sf::Color::White);
-
-			target.draw(tile, states);
+		layer.resize(height);
+		for (auto row : layer)
+		{
+			row.resize(width);
+			for (auto tile : row)
+			{
+				tile = 1;
+			}
 		}
 	}
 }

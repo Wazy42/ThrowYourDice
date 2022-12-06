@@ -39,20 +39,30 @@ void Window::render()
 {
 	m_Window->clear();
 	
-	for (sf::Drawable* d : m_listToRender)
+	for (int layer = LAYER_DOWN; layer < LAYER_UP; layer++)
 	{
-		m_Window->draw(*d);
+		for (std::pair<sf::Drawable*, int> pair : m_listToRender)
+		{
+			if (pair.second == layer)
+			{
+				m_Window->draw(*pair.first);
+				if (layer == LAYER_ANIMATIONS)
+				{
+					// Change animations here
+				}
+			}
+		}
 	}
 	
 	m_Window->display();
 }
 
-void Window::addDrawable(sf::Drawable* drawable)
+void Window::addDrawable(sf::Drawable* drawable, int layer)
 {
-	m_listToRender.push_back(drawable);
+	m_listToRender.insert(std::pair<sf::Drawable*, int>(drawable, layer));
 }
 
 void Window::remDrawable(sf::Drawable* drawable)
 {
-	m_listToRender.erase(std::remove(m_listToRender.begin(), m_listToRender.end(), drawable), m_listToRender.end());
+	m_listToRender.erase(drawable);
 }

@@ -1,14 +1,20 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Const.hpp"
+#include "graphics/Entity.hpp"
 
-class Room : public sf::Drawable
+/// <summary>
+/// Room is a set of tiles
+/// </summary>
+class Room
 {
 public:
-	Room(int w, int h, int tile_size);
+	Room(int w, int h);
 	~Room();
 
+	// TODO: Procedural generation of the room
+	void regenerate(int w, int h);
+
 protected:
-	int m_width, m_height;
-	int m_tile_size;
-	void draw(sf::RenderTarget&, sf::RenderStates) const;
+	std::vector<std::vector<std::vector<int>>> m_map;
 };
