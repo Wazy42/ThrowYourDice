@@ -1,9 +1,9 @@
 #include "../../headers/graphics/Entity.hpp"
 
-Entity::Entity(const sf::Texture &m_texture)
+Entity::Entity(const sf::Texture &texture)
 {
-    this->m_texture = m_texture;
-    this->m_sprite.setTexture(this->m_texture);
+    this->m_texture = texture;
+    this->m_sprite.setTexture(texture);
 }
 
 Entity::~Entity()
@@ -35,10 +35,25 @@ void Entity::setPosition(sf::Vector2f position)
     this->m_sprite.setPosition(position);
 }
 
-void Entity::setTexture(const sf::Texture &m_texture)
+sf::Vector2f Entity::getCoordinates()
 {
-    this->m_texture = m_texture;
-    this->m_sprite.setTexture(this->m_texture);
+	return this->m_coordinates;
+}
+
+void Entity::setCoordinates(sf::Vector2f coordinates)
+{
+	this->m_coordinates = coordinates;
+}
+
+void Entity::setCoordinates(float x, float y)
+{
+	this->m_coordinates = sf::Vector2f(x, y);
+}
+
+void Entity::setTexture(const sf::Texture& texture)
+{
+    this->m_texture = texture;
+    this->m_sprite.setTexture(texture);
 }
 
 void Entity::setTextureRect(sf::IntRect rect)
@@ -58,13 +73,13 @@ void Entity::setScale(float x, float y)
     }
 }
 
-// Sprite
-const sf::Sprite &Entity::getSprite(void) const
+void Entity::calculateOrigin()
 {
-    return this->m_sprite;
+	m_sprite.setOrigin(
+		(m_sprite.getGlobalBounds().width - SIZE_TILE) / 2,
+		m_sprite.getGlobalBounds().height - SIZE_TILE
+	);
 }
-
-// TODO: Animation
 
 void Entity::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {

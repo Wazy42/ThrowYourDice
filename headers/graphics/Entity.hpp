@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Const.hpp"
 
 #define SPRITE_SIZE 32;
 
@@ -37,10 +38,34 @@ public:
 	/// <summary>
 	/// Set the sprite's position to the given x and y pixels.
 	/// </summary>
-	/// <param name="x"></param>
-	/// <param name="y"></param>
+	/// <param name="x">New x</param>
+	/// <param name="y">New y</param>
 	void setPosition(float x, float y);
+
+	/// <summary>
+	/// Set the sprite's position to the given poistion in pixels.
+	/// </summary>
+	/// <param name="position">New position</param>
 	void setPosition(sf::Vector2f);
+
+	/// <summary>
+	/// Get the coordinates of this Entity on the map.
+	/// </summary>
+	/// <returns>Coordinates of the Entity</returns>
+	sf::Vector2f getCoordinates();
+
+	/// <summary>
+	/// Set the coordinates of this Entity on the map.
+	/// </summary>
+	/// <param name="x">New x</param>
+	/// <param name="y">New y</param>
+	void setCoordinates(float x, float y);
+	
+	/// <summary>
+	/// Set the coordinates of this Entity on the map.
+	/// </summary>
+	/// <param name="coordinates">New coordinates</param>
+	void setCoordinates(sf::Vector2f);
 
 	// Texture and scale
 
@@ -63,21 +88,16 @@ public:
 	/// <param name="y">New y scale</param>
 	void setScale(float, float = 0);
 
-    // Sprite
-    /// <summary>
-    /// Get the sprite of the entity.
-    /// </summary>
-    /// <returns></returns>
-    const sf::Sprite& getSprite(void) const;
+	/// <summary>
+	/// Change the sprite origin to a tile size rect
+	/// in the middle of the bottom of the sprite.
+	/// </summary>
+	void calculateOrigin();
 
-
-	// Animation
-
-	
-    
 protected:
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
+	sf::Vector2f m_coordinates;
 	void draw(sf::RenderTarget&, sf::RenderStates) const;
 };
 
