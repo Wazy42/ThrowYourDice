@@ -105,6 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)SFML\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +133,8 @@
   <ItemGroup>
     <ClCompile Include="source\graphics\Entity.cpp" />
     <ClCompile Include="source\graphics\BText.cpp" />
+    <ClCompile Include="source\graphics\ui\UI.cpp" />
+    <ClCompile Include="source\graphics\ui\WidgetButton.cpp" />
     <ClCompile Include="source\graphics\Window.cpp" />
     <ClCompile Include="source\Room.cpp" />
     <ClCompile Include="source\Player.cpp" />
@@ -142,6 +145,8 @@
     <ClInclude Include="Const.hpp" />
     <ClInclude Include="headers\graphics\Entity.hpp" />
     <ClInclude Include="headers\graphics\BText.hpp" />
+    <ClInclude Include="headers\graphics\ui\UI.h" />
+    <ClInclude Include="headers\graphics\ui\WidgetButton.h" />
     <ClInclude Include="headers\graphics\Window.hpp" />
     <ClInclude Include="headers\Room.hpp" />
     <ClInclude Include="headers\Player.hpp" />

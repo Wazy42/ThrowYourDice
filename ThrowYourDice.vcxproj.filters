@@ -30,6 +30,10 @@
     <ClCompile Include="source\graphics\BText.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="source\graphics\ui\WidgetButton.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\graphics\ui\UI.cpp">
     <ClCompile Include="source\Room.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -50,6 +54,10 @@
     <ClInclude Include="headers\graphics\BText.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="headers\graphics\ui\WidgetButton.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\graphics\ui\UI.h">
     <ClInclude Include="headers\Room.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
