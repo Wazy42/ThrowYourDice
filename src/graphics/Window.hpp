@@ -43,7 +43,7 @@ public:
 	/// <returns>boolean</returns>
 	bool isOpen() const;
 	
-	GameState setGameState() const; 
+	GameState getGameState() const; 
 	
 	void switchInMainMenu();
 	void switchInPauseMenu();

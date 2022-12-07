@@ -28,7 +28,7 @@ bool Window::isOpen() const
 	return m_Window->isOpen();
 }
 
-GameState Window::setGameState() const
+GameState Window::getGameState() const
 {
 	return this->m_GameState;
 }
