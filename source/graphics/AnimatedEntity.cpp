@@ -1,4 +1,4 @@
-#include "../../headers/graphics/AnimatedEntity.hpp"
+#include "headers/graphics/AnimatedEntity.hpp"
 
 AnimatedEntity::AnimatedEntity(const sf::Texture &texture, sf::Vector2f frameSize, int framesPerAnimation, int delayBetweenFrames) 
 : Entity(texture)
