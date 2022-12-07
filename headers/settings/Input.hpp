@@ -28,11 +28,6 @@ public:
 		skill_tree,
 		// Movement
 		movement,
-        up,
-        down,
-        left,
-        right,
-        
 		// Abilities
 		ability_1,
 		ability_2,
