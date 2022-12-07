@@ -1,4 +1,4 @@
-#include "headers/graphics/Entity.hpp"
+#include "Entity.hpp"
 
 Entity::Entity(const sf::Texture &texture)
 {

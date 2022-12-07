@@ -1,7 +1,7 @@
-#include "headers/graphics/ui/UI.h"
+#include "UI.h"
 
-#include "headers/graphics/Window.hpp"
-#include "headers/graphics/ui/WidgetButton.h"
+#include "src/graphics/Window.hpp"
+#include "src/graphics/ui/WidgetButton.h"
 
 
 UI::UI( Window* w )

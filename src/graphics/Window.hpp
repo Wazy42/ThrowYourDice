@@ -67,7 +67,8 @@ public:
 	void remDrawable(sf::Drawable* drawable);
 	
 private:
+
 	sf::RenderWindow* m_Window;
-	std::map<sf::Drawable*, int> m_listToRender;
+	std::map<int, std::vector<sf::Drawable*>> m_listToRender;
 };
 
