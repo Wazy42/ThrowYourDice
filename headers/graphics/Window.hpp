@@ -14,7 +14,7 @@ public:
 	/// <param name="width">Width of the window (default: width of the screen)</param>
 	/// <param name="height">Height of the window (default: haight of the screen)</param>
 	/// <param name="style">sf::Style (default: Fullscreen)</param>
-	Window(const char* t, int w = sf::VideoMode::getDesktopMode().width, int h = sf::VideoMode::getDesktopMode().height, int s = sf::Style::Fullscreen);
+	Window(const char* title, int width = sf::VideoMode::getDesktopMode().width, int height = sf::VideoMode::getDesktopMode().height, int style = sf::Style::Fullscreen);
 	~Window();
 
 	/// <summary>
@@ -40,7 +40,7 @@ public:
 	/// </summary>
 	/// <param name="event"></param>
 	/// <returns>boolean: value of event has been changed</returns>
-	bool pollEvent(sf::Event&);
+	bool pollEvent(sf::Event& event);
 	
 	/// <summary>
 	/// Close the window.
@@ -58,13 +58,13 @@ public:
 	/// </summary>
 	/// <param name="drawable">New drawable object</param>
 	/// <param name="layer">Layer of the object (0 = background, 9 = foreground)</param>
-	void addDrawable(sf::Drawable*, int layer);
+	void addDrawable(sf::Drawable* drawable, int layer);
 	
 	/// <summary>
 	/// Remove a drawable object from the list of displayed drawable objects.
 	/// </summary>
 	/// <param name="drawable">Drawable object to remove</param>
-	void remDrawable(sf::Drawable*);
+	void remDrawable(sf::Drawable* drawable);
 	
 private:
 	sf::RenderWindow* m_Window;

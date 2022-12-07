@@ -14,7 +14,7 @@ public:
 	/// <param name="frameSize">The size of one frame, in pixels</param>
 	/// <param name="framesPerAnimation">Number of frames per animations</param>
 	/// <param name="delayBetweenFrames">Delay in game frame between each animation frame</param>
-	AnimatedEntity(const sf::Texture&, sf::Vector2f frameSize, int framesPerAnimation, int delayBetweenFrames);
+	AnimatedEntity(const sf::Texture& texture, sf::Vector2f frameSize, int framesPerAnimation, int delayBetweenFrames);
 	~AnimatedEntity();
 
 	// Animation
@@ -28,7 +28,7 @@ public:
 	/// Set the current frame.
 	/// </summary>
 	/// <param name="frame">Frame number</param>
-	void setCurrentFrame(int);
+	void setCurrentFrame(int frame);
 
 	/// <summary>
 	/// Move to the next frame.
@@ -44,7 +44,7 @@ public:
 	/// Set the current animation.
 	/// </summary>
 	/// <param name="animation">Animation number</param>
-	void setCurrentAnimation(int);
+	void setCurrentAnimation(int animation);
 
 	/// <summary>
 	/// Update the animation.
@@ -54,7 +54,8 @@ public:
 	/// <summary>
 	/// Chnage the delay between frames.
 	/// </summary>
-	void setDelayBetweenFrames(int);
+	/// <param name="delay">New delay</param>
+	void setDelayBetweenFrames(int delay);
 	
 
 protected:
