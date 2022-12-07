@@ -43,10 +43,14 @@ public:
 	/// <returns>boolean</returns>
 	bool isOpen() const;
 	
+	GameState setGameState() const; 
+	
 	void switchInMainMenu();
 	void switchInPauseMenu();
 	void switchInSettingMenu();
 	void switchInGame();
+	
+	void drawMenu();
 	
 	/// <summary>
 	/// Pop the event on top of the event queue, if any, and return it.
@@ -80,7 +84,11 @@ public:
 	void remDrawable(sf::Drawable* drawable);
 	
 private:
+	sf::View m_View;
 	GameState m_GameState;
+
+	sf::Texture m_background_texture;
+	
 	sf::RenderWindow* m_Window;
 	std::map<int, std::vector<sf::Drawable*>> m_listToRender;
 };

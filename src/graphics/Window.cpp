@@ -28,6 +28,11 @@ bool Window::isOpen() const
 	return m_Window->isOpen();
 }
 
+GameState Window::setGameState() const
+{
+	return this->m_GameState;
+}
+
 void Window::switchInMainMenu()
 {
 	m_GameState = GameState::MainMenu;
@@ -46,6 +51,13 @@ void Window::switchInSettingMenu()
 void Window::switchInGame()
 {
 	m_GameState = GameState::InGame;
+}
+
+void Window::drawMenu()
+{
+	sf::Sprite background(this->m_background_texture);
+	this->addDrawable(&background, LAYER_DOWN);
+
 }
 
 bool Window::pollEvent(sf::Event& event)

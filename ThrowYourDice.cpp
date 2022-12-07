@@ -18,7 +18,13 @@ int main()
 	Input input(window->getWindow());
 	input.setKeyToBinding(sf::Keyboard::Escape, Input::escape);
 	input.setKeyToBinding(sf::Keyboard::Space, Input::inventory);
+	
+	sf::Texture m_background_texture;
+	m_background_texture.loadFromFile("assets/textures/background.png");
+	sf::Sprite background(m_background_texture);
+	window->addDrawable(&background, LAYER_DOWN);
 
+	window->switchInMainMenu();
 	// Anmated entity test
 	sf::Texture texture;
 	texture.loadFromFile("assets/textures/bunny_animations.png");
@@ -28,6 +34,8 @@ int main()
 
 	WidgetSlider* w = new WidgetSlider(sf::Vector2f(10, 10), sf::Vector2f(100, 20), 0.5F);
 	window->addDrawable(w, 9);
+	
+	
 
 	while (window->isOpen())
 	{
