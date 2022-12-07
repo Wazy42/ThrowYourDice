@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include "Const.hpp"
 
-#define SPRITE_SIZE 32;
 
 class Entity : public sf::Drawable
 {
