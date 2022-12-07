@@ -28,6 +28,26 @@ bool Window::isOpen() const
 	return m_Window->isOpen();
 }
 
+void Window::switchInMainMenu()
+{
+	m_GameState = GameState::MainMenu;
+}
+
+void Window::switchInPauseMenu()
+{
+	m_GameState = GameState::PauseMenu;
+}
+
+void Window::switchInSettingMenu()
+{
+	m_GameState = GameState::SettingMenu;
+}
+
+void Window::switchInGame()
+{
+	m_GameState = GameState::InGame;
+}
+
 bool Window::pollEvent(sf::Event& event)
 {
 	return m_Window->pollEvent(event);

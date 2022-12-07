@@ -4,6 +4,14 @@
 #include "Const.hpp"
 #include <vector>
 
+enum GameState
+{
+	MainMenu,
+	PauseMenu,
+	SettingMenu,
+	InGame
+};
+
 class Window
 {
 public:
@@ -34,6 +42,11 @@ public:
 	/// </summary>
 	/// <returns>boolean</returns>
 	bool isOpen() const;
+	
+	void switchInMainMenu();
+	void switchInPauseMenu();
+	void switchInSettingMenu();
+	void switchInGame();
 	
 	/// <summary>
 	/// Pop the event on top of the event queue, if any, and return it.
@@ -67,7 +80,7 @@ public:
 	void remDrawable(sf::Drawable* drawable);
 	
 private:
-
+	GameState m_GameState;
 	sf::RenderWindow* m_Window;
 	std::map<int, std::vector<sf::Drawable*>> m_listToRender;
 };
