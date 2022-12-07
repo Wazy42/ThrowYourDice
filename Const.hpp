@@ -3,6 +3,9 @@
 // Assets path
 #define ASSETS_PATH "assets/"
 
+// FPS
+#define FPS 60
+
 // Fonts path
 #define FONT_PATH ASSETS_PATH ## "fonts/"
 #define FONT_SPINWERARD FONT_PATH ## "spinwerad.ttf"
@@ -10,9 +13,6 @@
 
 // Textures path
 #define TEXTURE_PATH ASSETS_PATH ## "textures/"
-#define TEXTURE_CAT TEXTURE_PATH ## "cat.jpg"
-#define TEXTURE_KNIGHT TEXTURE_PATH ## "knight.png"
-#define TEXTURE_FLOOR1 TEXTURE_PATH ## "floor1.png"
 
 // Sounds path
 #define SOUND_PATH ASSETS_PATH ## "sounds/"
@@ -20,15 +20,20 @@
 // Sizes
 #define SIZE_TILE 32
 
+// Animation
+#define ANIMATION_DOWN 0
+#define ANIMATION_UP 1
+#define ANIMATION_RIGHT 2
+#define ANIMATION_LEFT 3
+
 // Draw
 #define LAYER_UP 10 // Drawn on top of everything
-#define LAYER_DECORATION_UP 9
-#define LAYER_DECORATION_DOWN 8
-#define LAYER_OBSTACLES 7
-#define LAYER_ANIMATIONS 6
-#define LAYER_BEINGS 5
-#define LAYER_FURNITURE_UP 4
-#define LAYER_FURNITURE_DOWN 3
-#define LAYER_GROUND_UP 2
-#define LAYER_GROUND_DOWN 1
+#define LAYER_DECORATION 8
+#define LAYER_ANIMATIONS_UP 7 // Animated
+#define LAYER_OBSTACLES 6
+#define LAYER_BEINGS 5 // Animated
+#define LAYER_UNDER_BEINGS 4
+#define LAYER_ANIMATIONS_DOWN 3 // Animated
+#define LAYER_FURNITURE 2
+#define LAYER_GROUND 1
 #define LAYER_DOWN 0 // Drawn under everything

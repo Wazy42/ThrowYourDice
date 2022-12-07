@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Const.hpp"
 
+
 class Entity : public sf::Drawable
 {
 public:
@@ -9,7 +10,7 @@ public:
 	/// Create an entity, with a texture to render.
 	/// </summary>
 	/// <param name="texture">The texture that represent the Entity</param>
-	Entity(const sf::Texture&);
+	Entity(const sf::Texture& texture);
 	~Entity();
 	
 	// Position
@@ -31,7 +32,7 @@ public:
 	/// Move the sprite by the given vector.
 	/// </summary>
 	/// <param name="movement"></param>
-	void move(sf::Vector2f);
+	void move(sf::Vector2f movement);
 
 	/// <summary>
 	/// Set the sprite's position to the given x and y pixels.
@@ -44,7 +45,7 @@ public:
 	/// Set the sprite's position to the given poistion in pixels.
 	/// </summary>
 	/// <param name="position">New position</param>
-	void setPosition(sf::Vector2f);
+	void setPosition(sf::Vector2f position);
 
 	/// <summary>
 	/// Get the coordinates of this Entity on the map.
@@ -63,7 +64,7 @@ public:
 	/// Set the coordinates of this Entity on the map.
 	/// </summary>
 	/// <param name="coordinates">New coordinates</param>
-	void setCoordinates(sf::Vector2f);
+	void setCoordinates(sf::Vector2f coordinates);
 
 	// Texture and scale
 
@@ -71,20 +72,20 @@ public:
 	/// Set the entity texture.
 	/// </summary>
 	/// <param name="texture">New texture</param>
-	void setTexture(const sf::Texture&);
+	void setTexture(const sf::Texture& texture);
 
 	/// <summary>
 	/// Sets the texture rect.
 	/// </summary>
 	/// <param name="rect">New texture rect</param>
-	void setTextureRect(sf::IntRect);
+	void setTextureRect(sf::IntRect rect);
 
 	/// <summary>
 	/// Set the sprite's scale.
 	/// </summary>
 	/// <param name="x">New x scale</param>
 	/// <param name="y">New y scale</param>
-	void setScale(float, float = 0);
+	void setScale(float x, float y = 0);
 
 	/// <summary>
 	/// Change the sprite origin to a tile size rect
@@ -92,9 +93,6 @@ public:
 	/// </summary>
 	void calculateOrigin();
 
-	// Animation
-	// TODO
-	
 protected:
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;

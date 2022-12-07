@@ -1,8 +1,11 @@
-#include "headers/graphics/Window.hpp"
+#include "../../Const.hpp"
+#include "../../headers/graphics/Window.hpp"
+#include "../../headers/graphics/AnimatedEntity.hpp"
 
 Window::Window(const char* title, int width, int height, int style)
 {
 	m_Window = new sf::RenderWindow(sf::VideoMode(width, height), title, style);
+    m_Window->setFramerateLimit(FPS);
 }
 
 Window::~Window()
@@ -46,9 +49,11 @@ void Window::render()
 			if (pair.second == layer)
 			{
 				m_Window->draw(*pair.first);
-				if (layer == LAYER_ANIMATIONS)
+				
+				// Update animations
+				if (layer == LAYER_ANIMATIONS_DOWN || layer == LAYER_BEINGS || layer == LAYER_ANIMATIONS_UP)
 				{
-					// Change animations here
+					((AnimatedEntity*)pair.first)->update();
 				}
 			}
 		}
