@@ -1,4 +1,4 @@
-#include "../../headers/settings/Input.hpp"
+#include "Input.hpp"
 
 Input::Input(sf::RenderWindow* window)
 {

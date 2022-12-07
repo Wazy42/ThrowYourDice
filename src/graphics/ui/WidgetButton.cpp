@@ -1,4 +1,4 @@
-#include "headers/graphics/ui/WidgetButton.h"
+#include "WidgetButton.h"
 
 
 WidgetButton::WidgetButton()
