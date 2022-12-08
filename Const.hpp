@@ -37,3 +37,35 @@
 #define LAYER_FURNITURE 2
 #define LAYER_GROUND 1
 #define LAYER_DOWN 0 // Drawn under everything
+
+
+/// <summary>
+/// All actions that can be done with the keyboard.
+/// </summary>
+enum Bindings {
+	Escape,
+	Inventory,
+	Map,
+	Skill_tree,
+	Movement,
+	Ability_1,
+	Ability_2,
+	Ability_3,
+	Ability_4,
+	Ability_5,
+	Ability_6,
+	Skip,
+	DEBUG, // must be the last one, used to know the size of the array (not a real binding) 
+};
+
+/// <summary>
+/// Method to set stats.
+/// </summary>
+enum class SetMethod {
+	// Set the value to the given value
+	Set,
+	// Add the given value to the current value
+	Add,
+	// Multiply the current value by the given value
+	Multiply,
+};
