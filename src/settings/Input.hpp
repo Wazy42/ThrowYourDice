@@ -1,8 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <string>
+#include <vector>
 #include <array>
+#include "Const.hpp"
 
 /// <summary>
 /// Class that manages the inputs of a window (keyboard and mouse).
@@ -17,29 +18,6 @@ public:
 	Input(sf::RenderWindow* w);
 	~Input();
 	
-	/// <summary>
-	/// All actions that can be done with the keyboard.
-	/// </summary>
-	enum Bindings {
-		// Menu
-		escape,
-		inventory,
-		map,
-		skill_tree,
-		// Movement
-		movement,
-		// Abilities
-		ability_1,
-		ability_2,
-		ability_3,
-		ability_4,
-		ability_5,
-		ability_6,
-		// Other
-		skip,
-		DEBUG, // must be the last one, used to know the size of the array (not a real binding) 
-	};
-
 	/// <summary>
 	/// Add or change a key binding.
 	/// </summary>

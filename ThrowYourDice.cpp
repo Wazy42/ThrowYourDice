@@ -6,7 +6,6 @@
 #include "src/graphics/ui/BText.hpp"
 #include "src/settings/Input.hpp"
 #include "src/Room.hpp"
-
 #include "src/graphics/ui/WidgetSlider.h"
 
 int main()
@@ -16,8 +15,8 @@ int main()
 
 	// Input manager
 	Input input(window->getWindow());
-	input.setKeyToBinding(sf::Keyboard::Escape, Input::escape);
-	input.setKeyToBinding(sf::Keyboard::Space, Input::inventory);
+	input.setKeyToBinding(sf::Keyboard::Escape, Bindings::Escape);
+	input.setKeyToBinding(sf::Keyboard::Space, Bindings::Inventory);
 
 	// Anmated entity test
 	sf::Texture texture;
@@ -42,7 +41,7 @@ int main()
 			{
 				switch (input.getKeyBinding(event.key.code))
 				{
-				case Input::Bindings::escape:
+				case Bindings::Escape:
 					window->close();
 					break;
 				default:

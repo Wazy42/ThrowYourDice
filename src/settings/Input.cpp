@@ -40,7 +40,7 @@ bool Input::setKeyToBinding(sf::Keyboard::Key key, Bindings binding, bool swap)
 	}
 }
 
-Input::Bindings Input::getKeyBinding(sf::Keyboard::Key key)
+Bindings Input::getKeyBinding(sf::Keyboard::Key key)
 {
 	for (int i = 0; i < this->m_keyBindings.size(); i++)
 	{
