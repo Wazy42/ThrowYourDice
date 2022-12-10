@@ -31,6 +31,8 @@
     <ClCompile Include="src\graphics\AnimatedEntity.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameplay\Ability.cpp" />
+    <ClCompile Include="src\gameplay\Fighter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.hpp">
@@ -63,6 +65,8 @@
     <ClInclude Include="src\graphics\Window.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="src\gameplay\Ability.hpp" />
+    <ClInclude Include="src\gameplay\Fighter.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">
