@@ -134,6 +134,7 @@
     <ClCompile Include="src\graphics\AnimatedEntity.cpp" />
     <ClCompile Include="src\graphics\ui\BText.cpp" />
     <ClCompile Include="src\graphics\Entity.cpp" />
+    <ClCompile Include="src\graphics\ui\Sidebar.cpp" />
     <ClCompile Include="src\graphics\ui\UI.cpp" />
     <ClCompile Include="src\graphics\ui\WidgetButton.cpp" />
     <ClCompile Include="src\graphics\ui\WidgetSlider.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="src\graphics\AnimatedEntity.hpp" />
     <ClInclude Include="src\graphics\ui\BText.hpp" />
     <ClInclude Include="src\graphics\Entity.hpp" />
+    <ClInclude Include="src\graphics\ui\Sidebar.hpp" />
     <ClInclude Include="src\graphics\ui\UI.h" />
     <ClInclude Include="src\graphics\ui\WidgetButton.h" />
     <ClInclude Include="src\graphics\ui\WidgetSlider.h" />

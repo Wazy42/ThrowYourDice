@@ -31,6 +31,7 @@
     <ClCompile Include="src\graphics\AnimatedEntity.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\ui\Sidebar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.hpp">
@@ -63,6 +64,7 @@
     <ClInclude Include="src\graphics\Window.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="src\graphics\ui\Sidebar.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">

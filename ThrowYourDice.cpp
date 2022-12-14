@@ -7,6 +7,7 @@
 #include "src/settings/Input.hpp"
 #include "src/Room.hpp"
 
+#include "src/graphics/ui/Sidebar.hpp"
 #include "src/graphics/ui/WidgetSlider.h"
 
 int main()
@@ -28,6 +29,10 @@ int main()
 
 	WidgetSlider* w = new WidgetSlider(sf::Vector2f(10, 10), sf::Vector2f(100, 20), 0.5F);
 	window->addDrawable(w, 9);
+
+	Sidebar* s = new Sidebar(BORDER_RIGHT, sf::Vector2f(100, 100));
+	window->addDrawable(s, 9);
+	std::cout << "Pos : " << s->getPosition().x << " " << s->getPosition().y << std::endl;
 
 	while (window->isOpen())
 	{
