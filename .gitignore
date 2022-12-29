@@ -35,3 +35,6 @@
 .vscode/
 x64/
 *.vcxproj.user
+
+# TYDEngine
+TYDEngine/
