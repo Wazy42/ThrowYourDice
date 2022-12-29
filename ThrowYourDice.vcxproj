@@ -133,30 +133,14 @@
   <ItemGroup>
     <ClCompile Include="src\gameplay\Ability.cpp" />
     <ClCompile Include="src\gameplay\Fighter.cpp" />
-    <ClCompile Include="src\graphics\AnimatedEntity.cpp" />
-    <ClCompile Include="src\graphics\ui\BText.cpp" />
-    <ClCompile Include="src\graphics\Entity.cpp" />
-    <ClCompile Include="src\graphics\ui\UI.cpp" />
-    <ClCompile Include="src\graphics\ui\WidgetButton.cpp" />
-    <ClCompile Include="src\graphics\ui\WidgetSlider.cpp" />
-    <ClCompile Include="src\graphics\Window.cpp" />
     <ClCompile Include="src\Room.cpp" />
-    <ClCompile Include="src\settings\Input.cpp" />
     <ClCompile Include="ThrowYourDice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameplay\Ability.hpp" />
     <ClInclude Include="Const.hpp" />
     <ClInclude Include="src\gameplay\Fighter.hpp" />
-    <ClInclude Include="src\graphics\AnimatedEntity.hpp" />
-    <ClInclude Include="src\graphics\ui\BText.hpp" />
-    <ClInclude Include="src\graphics\Entity.hpp" />
-    <ClInclude Include="src\graphics\ui\UI.h" />
-    <ClInclude Include="src\graphics\ui\WidgetButton.h" />
-    <ClInclude Include="src\graphics\ui\WidgetSlider.h" />
-    <ClInclude Include="src\graphics\Window.hpp" />
     <ClInclude Include="src\Room.hpp" />
-    <ClInclude Include="src\settings\Input.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,12 +1,10 @@
 #include <iostream>
+
+#include <TYDEngine/Graphics.hpp>
+#include <TYDEngine/Inputs.hpp>
+
 #include "Const.hpp"
-#include "src/graphics/Window.hpp"
-#include "src/graphics/Entity.hpp"
-#include "src/graphics/AnimatedEntity.hpp"
-#include "src/graphics/ui/BText.hpp"
-#include "src/settings/Input.hpp"
 #include "src/Room.hpp"
-#include "src/graphics/ui/WidgetSlider.h"
 
 int main()
 {

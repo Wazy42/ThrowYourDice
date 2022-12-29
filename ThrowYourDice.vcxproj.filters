@@ -4,69 +4,29 @@
     <ClCompile Include="ThrowYourDice.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\Window.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\ui\WidgetSlider.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\ui\WidgetButton.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\ui\UI.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="src\Room.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="src\settings\Input.cpp">
+    <ClCompile Include="src\gameplay\Fighter.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\Entity.cpp">
+    <ClCompile Include="src\gameplay\Ability.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\ui\BText.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\AnimatedEntity.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gameplay\Ability.cpp" />
-    <ClCompile Include="src\gameplay\Fighter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\AnimatedEntity.hpp">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\ui\BText.hpp">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\Entity.hpp">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\settings\Input.hpp">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="src\Room.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\ui\UI.h">
+    <ClInclude Include="src\gameplay\Fighter.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\ui\WidgetButton.h">
+    <ClInclude Include="src\gameplay\Ability.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\ui\WidgetSlider.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\Window.hpp">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gameplay\Ability.hpp" />
-    <ClInclude Include="src\gameplay\Fighter.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">
