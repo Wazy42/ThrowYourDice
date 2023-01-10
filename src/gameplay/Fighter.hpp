@@ -1,8 +1,7 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <TYDEngine/Graphics.hpp>
 #include "Const.hpp"
-#include "src/graphics/AnimatedEntity.hpp"
 
 // Forward declaration for ability. This is needed because of the circular dependency between Ability and Fighter.
 class Ability;
