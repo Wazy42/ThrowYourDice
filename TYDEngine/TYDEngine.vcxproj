@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1e3ee899-e439-423f-8981-85c5d02a5111}</ProjectGuid>
-    <RootNamespace>ThrowYourDice</RootNamespace>
+    <ProjectGuid>{45e2bcfb-0313-49ee-bce2-9476405020b0}</ProjectGuid>
+    <RootNamespace>TYDEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,13 +104,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)SFML\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(ProjectDir)SFML\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)TYDEngine\SFML\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -131,32 +130,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\gameplay\Ability.cpp" />
-    <ClCompile Include="src\gameplay\Fighter.cpp" />
-    <ClCompile Include="src\graphics\AnimatedEntity.cpp" />
-    <ClCompile Include="src\graphics\ui\BText.cpp" />
-    <ClCompile Include="src\graphics\Entity.cpp" />
-    <ClCompile Include="src\graphics\ui\UI.cpp" />
-    <ClCompile Include="src\graphics\ui\WidgetButton.cpp" />
-    <ClCompile Include="src\graphics\ui\WidgetSlider.cpp" />
-    <ClCompile Include="src\graphics\Window.cpp" />
-    <ClCompile Include="src\Room.cpp" />
-    <ClCompile Include="src\settings\Input.cpp" />
-    <ClCompile Include="ThrowYourDice.cpp" />
+    <ClCompile Include="graphics\AnimatedEntity.cpp" />
+    <ClCompile Include="graphics\Entity.cpp" />
+    <ClCompile Include="graphics\ui\BText.cpp" />
+    <ClCompile Include="graphics\ui\UI.cpp" />
+    <ClCompile Include="graphics\ui\WidgetButton.cpp" />
+    <ClCompile Include="graphics\ui\WidgetSlider.cpp" />
+    <ClCompile Include="graphics\Window.cpp" />
+    <ClCompile Include="inputs\Input.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\gameplay\Ability.hpp" />
-    <ClInclude Include="Const.hpp" />
-    <ClInclude Include="src\gameplay\Fighter.hpp" />
-    <ClInclude Include="src\graphics\AnimatedEntity.hpp" />
-    <ClInclude Include="src\graphics\ui\BText.hpp" />
-    <ClInclude Include="src\graphics\Entity.hpp" />
-    <ClInclude Include="src\graphics\ui\UI.h" />
-    <ClInclude Include="src\graphics\ui\WidgetButton.h" />
-    <ClInclude Include="src\graphics\ui\WidgetSlider.h" />
-    <ClInclude Include="src\graphics\Window.hpp" />
-    <ClInclude Include="src\Room.hpp" />
-    <ClInclude Include="src\settings\Input.hpp" />
+    <ClInclude Include="Graphics.hpp" />
+    <ClInclude Include="graphics\AnimatedEntity.hpp" />
+    <ClInclude Include="graphics\Entity.hpp" />
+    <ClInclude Include="graphics\ui\BText.hpp" />
+    <ClInclude Include="graphics\ui\UI.h" />
+    <ClInclude Include="graphics\ui\WidgetButton.h" />
+    <ClInclude Include="graphics\ui\WidgetSlider.h" />
+    <ClInclude Include="graphics\Window.hpp" />
+    <ClInclude Include="Inputs.hpp" />
+    <ClInclude Include="inputs\Input.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

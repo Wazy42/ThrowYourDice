@@ -1,7 +1,6 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include <TYDEngine/Graphics.hpp>
 #include "Const.hpp"
-#include "graphics/Entity.hpp"
 
 /// <summary>
 /// Room is a set of tiles

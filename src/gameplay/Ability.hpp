@@ -1,8 +1,7 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <TYDEngine/Graphics.hpp>
 #include "Const.hpp"
-#include "src/graphics/Entity.hpp"
 #include "Fighter.hpp"
 
 class Ability

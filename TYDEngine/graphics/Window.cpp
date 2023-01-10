@@ -1,6 +1,4 @@
-#include "Const.hpp"
-#include "src/graphics/Window.hpp"
-#include "src/graphics/AnimatedEntity.hpp"
+#include "graphics/Window.hpp"
 
 Window::Window(const char* title, int width, int height, int style)
 {

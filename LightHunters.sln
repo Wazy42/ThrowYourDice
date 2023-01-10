@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThrowYourDice", "ThrowYourDice.vcxproj", "{1E3EE899-E439-423F-8981-85C5D02A5111}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LightHunters", "LightHunters.vcxproj", "{1E3EE899-E439-423F-8981-85C5D02A5111}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TYDEngine", "TYDEngine\TYDEngine.vcxproj", "{45E2BCFB-0313-49EE-BCE2-9476405020B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{1E3EE899-E439-423F-8981-85C5D02A5111}.Release|x64.Build.0 = Release|x64
 		{1E3EE899-E439-423F-8981-85C5D02A5111}.Release|x86.ActiveCfg = Release|Win32
 		{1E3EE899-E439-423F-8981-85C5D02A5111}.Release|x86.Build.0 = Release|Win32
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Debug|x64.ActiveCfg = Debug|x64
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Debug|x64.Build.0 = Debug|x64
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Debug|x86.ActiveCfg = Debug|Win32
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Debug|x86.Build.0 = Debug|Win32
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Release|x64.ActiveCfg = Release|x64
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Release|x64.Build.0 = Release|x64
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Release|x86.ActiveCfg = Release|Win32
+		{45E2BCFB-0313-49EE-BCE2-9476405020B0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

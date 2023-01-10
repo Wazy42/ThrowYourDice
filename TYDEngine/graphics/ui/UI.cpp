@@ -1,9 +1,5 @@
 #include "UI.h"
 
-#include "src/graphics/Window.hpp"
-#include "src/graphics/ui/WidgetButton.h"
-
-
 UI::UI( Window* w )
 	: m_window( w )
 {

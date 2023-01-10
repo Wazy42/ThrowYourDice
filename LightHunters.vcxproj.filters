@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Room.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameplay\Ability.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameplay\Fighter.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LightHunters.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Const.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Room.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameplay\Ability.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameplay\Fighter.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{99f990d8-991e-4628-b6c6-93305577155d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{24e9cb5f-6d7b-44e0-96c9-a60738285ab8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
