@@ -3,6 +3,9 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+#include "graphics/Window.hpp"
+#include "graphics/ui/WidgetButton.h"
+
 class Window;
 class WidgetButton;
 

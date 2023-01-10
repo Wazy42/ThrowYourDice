@@ -1,12 +1,13 @@
 #include <iostream>
 #include <TYDEngine/Graphics.hpp>
+#include <TYDEngine/Inputs.hpp>
 #include "Const.hpp"
 #include "src/Room.hpp"
 
 int main()
 {
 	// Create a window
-	Window *window = new Window("Throw Your Dice", 1280, 720, sf::Style::Close);
+	Window *window = new Window("LightHunters", 1280, 720, sf::Style::Close);
 
 	// Input manager
 	Input input(window->getWindow());

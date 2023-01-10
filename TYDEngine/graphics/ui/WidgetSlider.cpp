@@ -1,7 +1,5 @@
 #include "WidgetSlider.h"
 
-
-
 WidgetSlider::WidgetSlider(const sf::Vector2f& pos, const sf::Vector2f& size, float initialPercentage)
 	: m_dragged(false)
 {

@@ -132,10 +132,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LightHunters.cpp" />
     <ClCompile Include="src\gameplay\Ability.cpp" />
     <ClCompile Include="src\gameplay\Fighter.cpp" />
     <ClCompile Include="src\Room.cpp" />
-    <ClCompile Include="ThrowYourDice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameplay\Ability.hpp" />

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "graphics/AnimatedEntity.hpp"
 #include "Const.hpp"
 #include <vector>
 

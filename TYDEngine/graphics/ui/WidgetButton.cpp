@@ -1,6 +1,5 @@
 #include "WidgetButton.h"
 
-
 WidgetButton::WidgetButton()
 	: m_callback( 0 ), m_callbackParam( 0 )
 {
